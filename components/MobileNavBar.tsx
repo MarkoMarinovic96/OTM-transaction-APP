@@ -35,14 +35,14 @@ const MobileNavBar = ({ user }: MobileNavProps) => {
             className="cursor-pointer flex items-center gap-1 px-4"
           >
             <Image
-              src="/icons/logo.svg"
+              src='/icons/OTMLogo.svg'
               alt="logo"
               width={34}
               height={34}
               className="size-[24px] max-xl:size-14"
             />
             <h1 className="font-ibm-plex-serif font-bold text-black-1 text-26">
-              OTM-Banking
+              OTM Banking
             </h1>
           </Link>
           <div className="mobilenav-sheet">

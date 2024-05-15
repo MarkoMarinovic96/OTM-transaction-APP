@@ -13,6 +13,7 @@ import CustomInput from "./CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
+import { signUp } from "@/lib/actions/user.actions";
 // import { getLoggedInUser, signIn, signUp } from "@/lib/actions/user.actions";
 // import PlaidLink from "./PlaidLink";
 
@@ -52,21 +53,20 @@ const AuthForm = ({ type }: { type: string }) => {
           email: data.email,
           password: data.password,
         };
-        console.log('aaaaaaa',userData)
 
-        // const newUser = await signUp(userData);
+        const newUser = await signUp(userData);
 
-        // setUser(newUser);
+        setUser(newUser);
       }
 
-    //   if (type === "sign-in") {
-    //     const response = await signIn({
-    //       email: data.email,
-    //       password: data.password,
-    //     });
+      if (type === "sign-in") {
+        const response = await signIn({
+          email: data.email,
+          password: data.password,
+        });
 
-    //     if (response) router.push("/");
-    //   }
+        if (response) router.push("/");
+      }
     } catch (error) {
       console.log(error);
     } finally {
@@ -79,13 +79,13 @@ const AuthForm = ({ type }: { type: string }) => {
       <header className="flex flex-col gap-5 md:gap-8">
         <Link href="/" className="cursor-pointer flex items-center gap-1">
           <Image
-            src="/icons/logo.svg"
+            src='/icons/OTMLogo.svg'
             width={34}
             height={34}
-            alt="Horizon logo"
+            alt="Logo"
           />
           <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
-            Horizon
+            OTM Banking
           </h1>
         </Link>
 

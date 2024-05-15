@@ -6,10 +6,10 @@ const inter = Inter({ subsets: ["latin"],variable: '--font-inter' });
 const ibmPlexSerif=IBM_Plex_Serif({subsets: ["latin"],weight:['400','700'],variable: '--font-ibm-plex-serif' })
 
 export const metadata: Metadata = {
-  title: "OTM-transaction",
-  description: "Transaction app for everyone",
+  title: "OTM banking",
+  description: "Banking app for everyone",
   icons:{
-    icon:'/icons/logo.svg'
+    icon:'/icons/OTMLogo.svg'
   }
 };
 
