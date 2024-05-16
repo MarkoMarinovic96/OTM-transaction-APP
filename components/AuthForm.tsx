@@ -13,8 +13,7 @@ import CustomInput from "./CustomInput";
 import { authFormSchema } from "@/lib/utils";
 import { Loader2 } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { signUp } from "@/lib/actions/user.actions";
-// import { getLoggedInUser, signIn, signUp } from "@/lib/actions/user.actions";
+import { getLoggedInUser, signIn, signUp } from "@/lib/actions/user.actions";
 // import PlaidLink from "./PlaidLink";
 
 const AuthForm = ({ type }: { type: string }) => {
@@ -78,12 +77,7 @@ const AuthForm = ({ type }: { type: string }) => {
     <section className="auth-form">
       <header className="flex flex-col gap-5 md:gap-8">
         <Link href="/" className="cursor-pointer flex items-center gap-1">
-          <Image
-            src='/icons/OTMLogo.svg'
-            width={34}
-            height={34}
-            alt="Logo"
-          />
+          <Image src="/icons/OTMLogo.svg" width={34} height={34} alt="Logo" />
           <h1 className="text-26 font-ibm-plex-serif font-bold text-black-1">
             OTM Banking
           </h1>
