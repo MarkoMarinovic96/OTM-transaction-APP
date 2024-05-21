@@ -90,7 +90,7 @@ declare type Bank = {
   accessToken: string;
   fundingSourceUrl: string;
   userId: string;
-  sharableId: string;
+  shareableId: string;
 };
 
 declare type AccountTypes =
@@ -259,7 +259,7 @@ declare interface PaymentTransferFormProps {
 
 // Actions
 declare interface getAccountsProps {
-  userId: string;
+  usersId:string;
 }
 
 declare interface getAccountProps {
@@ -311,7 +311,7 @@ declare interface exchangePublicTokenProps {
 
 declare interface createBankAccountProps {
   accessToken: string;
-  userId: string;
+  usersId: string;
   accountId: string;
   bankId: string;
   fundingSourceUrl: string;
@@ -319,7 +319,7 @@ declare interface createBankAccountProps {
 }
 
 declare interface getBanksProps {
-  userId: string;
+  usersId: string;
 }
 
 declare interface getBankProps {
