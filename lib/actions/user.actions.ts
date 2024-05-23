@@ -107,7 +107,7 @@ export async function getLoggedInUser() {
   try {
     const { account } = await createSessionClient();
     const result = await account.get();
-    const user= await getUserInfo({userId:result.$id})
+    const user = await getUserInfo({ userId: result.$id });
     return parseStringify(user);
   } catch (error) {
     return null;
@@ -246,6 +246,8 @@ export const getBanks = async ({ usersId }: getBanksProps) => {
       BANK_COLLECTION_ID!,
       [Query.equal("usersId", [usersId])]
     );
+    console.log("qqqq", banks.documents);
+
     return parseStringify(banks.documents);
   } catch (err) {
     console.error(err);
@@ -259,8 +261,29 @@ export const getBank = async ({ documentId }: getBankProps) => {
       BANK_COLLECTION_ID!,
       [Query.equal("$id", [documentId])]
     );
+    console.log("qqqq", bank.documents[0]);
     return parseStringify(bank.documents[0]);
   } catch (err) {
     console.error(err);
+  }
+};
+
+export const getBankByAccountId = async ({
+  accountId,
+}: getBankByAccountIdProps) => {
+  try {
+    const { database } = await createAdminClient();
+
+    const bank = await database.listDocuments(
+      DATABASE_ID!,
+      BANK_COLLECTION_ID!,
+      [Query.equal("accountId", [accountId])]
+    );
+
+    if (bank.total !== 1) return null;
+    console.log("rererererererer", bank.documents[0]);
+    return parseStringify(bank.documents[0]);
+  } catch (error) {
+    console.log(error);
   }
 };
