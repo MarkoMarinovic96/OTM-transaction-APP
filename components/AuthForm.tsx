@@ -45,7 +45,7 @@ const AuthForm = ({ type }: { type: string }) => {
           lastName: data.lastName!,
           address1: data.address1!,
           city: data.city!,
-          state: data.state!,
+          state: data.state?.toUpperCase()!,
           postalCode: data.postalCode!,
           dateOfBirth: data.dateOfBirth!,
           ssn: data.ssn!,
@@ -151,12 +151,7 @@ const AuthForm = ({ type }: { type: string }) => {
                       label="Date of Birth"
                       placeholder="YYYY-MM-DD"
                     />
-                    <CustomInput
-                      control={form.control}
-                      name="ssn"
-                      label="SSN"
-                      placeholder="Example: 1234"
-                    />
+
                   </div>
                 </>
               )}

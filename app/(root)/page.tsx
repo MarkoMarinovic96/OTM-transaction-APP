@@ -9,7 +9,7 @@ import React from "react";
 const Home = async ({ searchParams: { id, page } }: SearchParamProps) => {
   const currentPage = Number(page as string) || 1;
   const loggedIn = await getLoggedInUser();
-  const accounts = await getAccounts({ usersId: loggedIn.$id });
+  const accounts = await getAccounts({ usersId: loggedIn?.$id });
   const accountData = accounts?.data;
 
   if (!accounts) return;

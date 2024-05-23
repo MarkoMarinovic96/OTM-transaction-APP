@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   title: "OTM banking",
   description: "Banking app for everyone",
   icons:{
-    icon:'/icons/OTMLogo.svg'
+    icon:'/icons/favi.svg'
   }
 };
 

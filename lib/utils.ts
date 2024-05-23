@@ -210,5 +210,15 @@ export const authFormSchema = (type: string) =>
     ssn: type === "sign-in" ? z.string().optional() : z.string().min(3),
     // both
     email: z.string().email(),
-    password: z.string().min(8),
+    password: z
+      .string()
+      .min(8, { message: "Password must be at least 8 characters long" })
+      .max(60, { message: "Password cannot exceed 60 characters" })
+      .regex(/[a-zA-Z]/, {
+        message: "Password must contain at least one letter",
+      })
+      .regex(/\d/, { message: "Password must contain at least one number" })
+      .regex(/[A-Z]/, {
+        message: "Password must contain at least one uppercase letter",
+      }),
   });

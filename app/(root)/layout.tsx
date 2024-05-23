@@ -3,6 +3,7 @@ import Sidebar from "@/components/Sidebar";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
 import Image from "next/image";
 import { redirect } from "next/navigation";
+import favi from '@/public/icons/favi.svg'
 
 export default async function RootLayout({
   children,
@@ -18,7 +19,7 @@ export default async function RootLayout({
       <Sidebar user={loggedIn} />
       <div className="flex size-full flex-col">
         <div className="root-layout">
-          <Image src="/icons/OTMLogo.svg" alt="logo" width={30} height={30} />
+          <Image src={favi} alt="logo" width={30} height={30} />
           <div>
             <MobileNavBar user={loggedIn} />
           </div>
