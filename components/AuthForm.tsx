@@ -151,7 +151,12 @@ const AuthForm = ({ type }: { type: string }) => {
                       label="Date of Birth"
                       placeholder="YYYY-MM-DD"
                     />
-
+                    <CustomInput
+                      control={form.control}
+                      name="ssn"
+                      label="SSN"
+                      placeholder="Example: 1234"
+                    />
                   </div>
                 </>
               )}
