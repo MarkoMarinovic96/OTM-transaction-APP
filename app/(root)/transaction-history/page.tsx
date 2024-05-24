@@ -7,7 +7,8 @@ import { getAccount, getAccounts } from "@/lib/actions/bank.actions";
 import { getLoggedInUser } from "@/lib/actions/user.actions";
 import { formatAmount } from "@/lib/utils";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
+import Loading from "../loading";
 
 const TransactionHistory = async ({
   searchParams: { id, page },
@@ -36,7 +37,7 @@ const TransactionHistory = async ({
     indexOfLastTransaction
   );
   return (
-    <div className="transactions">
+    <Suspense fallback={<Loading/>}>   <div className="transactions">
       <div className="transactions-header">
         <HeaderBox
           title="Transaction History"
@@ -91,7 +92,9 @@ const TransactionHistory = async ({
           )}
         </section>
       </div>
-    </div>
+    </div></Suspense>
+
+ 
   );
 };
 
