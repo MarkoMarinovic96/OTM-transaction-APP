@@ -36,7 +36,7 @@ const MobileNavBar = ({ user }: MobileNavProps) => {
             className="cursor-pointer flex items-center gap-1 px-4"
           >
             <Image
-              src='/icons/OTMLogo.svg'
+              src='/icons/25x24.png'
               alt="logo"
               width={34}
               height={34}
